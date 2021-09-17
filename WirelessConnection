@@ -17,4 +17,8 @@ network:
                     password: "{{WIFI PASSWORD}}"
                     
 ---
-Raspberry Pi should connect to the network after restarting
+$ sudo netplan --debug try
+$ sudo netplan --debug generate
+$ sudo netplan --debug apply
+---
+$ sudo reboot
