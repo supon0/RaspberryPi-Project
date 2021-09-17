@@ -1,0 +1,20 @@
+Add the wifi network configuration to /etc/netplan/50-cloud-init.yaml
+sudo vim /etc/netplan/50-cloud-init.yaml
+
+---
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            optional: true
+    version: 2
+    wifis:
+        wlan0:
+            optional: true
+            dhcp4: true
+            access-points:
+                "{{WIFI NAME}}":
+                    password: "{{WIFI PASSWORD}}"
+                    
+---
+Raspberry Pi should connect to the network after restarting
